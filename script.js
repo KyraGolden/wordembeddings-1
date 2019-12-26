@@ -3,25 +3,26 @@
 
 $(document).ready(function(){
     $("#getSynonyms").submit(function(){
-        //alert("Submitted");i
         // Stop form from submitting normally
          event.preventDefault();
-        // Get some values from elements on the page:
+        // Get the values from elements on the page:
         var $form = $(this),
             inputword = $form.find("input[name='w']").val(),
-            nr = $form.find("input[name='nr']").val();
+            nr = $("#nr").children("option:selected").val(),
+            radioValue = $("input[name='searchType']:checked").val();
         jQuery.ajax({
             url: "var/www/cgi-bin/get_synonyms.py",
             type: "POST",
             //contentType: "application/json",
             data: {w: inputword,
-                   nr: nr
+                   nr: nr,
+                   st: radioValue
                    },
             success: function(response){
                 console.log(response);
-                //alert(response.syn1);
+                $("#result").empty().append('<br>');
                 var content = nr + " synonyms for ";
-                $("#result").empty().append(content);
+                $("#result").append(content);
                 $("#result").append(inputword);
                 $("#result").append(": <br>");
                 $("#result").append(response.syn1);

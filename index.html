@@ -20,7 +20,22 @@
     <br>
     <br>
     <label for="nr">How many synonyms would you like to get?</label>
-    <input name="nr" id="nr">
+         <select id="nr" name="nr">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+    <!--<input name="nr" id="nr"> -->
+     <br>
+     <br>
+    <input type="radio" name="searchType" value="bigSearch">I prefer the big search (can take some time)<br>
+    <input type="radio" name="searchType" value="quickSearch"> Let's do a quick search (default) <br>
+     <br>
     <input type="submit" value="Search">
 </form>
 <div id="result"></div>
