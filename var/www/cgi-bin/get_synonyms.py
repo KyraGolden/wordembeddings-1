@@ -13,7 +13,7 @@ cgitb.enable(display=0, logdir="/logs")
 
 def application(environ, start_response):
     params = cgi.FieldStorage(fp=environ['wsgi.input'], environ=environ)
-    word = params["s"].value
+    word = params["w"].value
     nr =  params["nr"].value
     synonym = find_synonyms("/home/pcl3_03/public_html/wordembeddings/short.cc.de.300.vec", word, int(nr))
     output = {}
