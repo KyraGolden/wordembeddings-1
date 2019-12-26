@@ -8,13 +8,13 @@ $(document).ready(function(){
          event.preventDefault();
         // Get some values from elements on the page:
         var $form = $(this),
-            inputword = $form.find("input[name='s']").val(),
+            inputword = $form.find("input[name='w']").val(),
             nr = $form.find("input[name='nr']").val();
         jQuery.ajax({
             url: "var/www/cgi-bin/get_synonyms.py",
             type: "POST",
             //contentType: "application/json",
-            data: {s: inputword,
+            data: {w: inputword,
                    nr: nr
                    },
             success: function(response){
