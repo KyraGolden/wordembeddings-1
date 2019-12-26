@@ -3,18 +3,26 @@
 <head>
     <meta charset="utf-8"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+    <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> -->
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </head>
 <body>
 <h1>Synonym Finder</h1>
-<form action="var/www/cgi-bin/get_synonyms.py" method="post">
-    <label for="word">What word do you want search synonyms for?</label>
-    <input name="word" id="word">
+<!--<form action="var/www/cgi-bin/get_synonyms.py" method="post" id="get_synonyms"> -->
+<form action=" " id="getSynonyms">
+    <label for="s">What word do you want search synonyms for?</label>
+    <input type="text" id="s" name="s" placeholder="Type a word">
     <br>
     <br>
     <label for="nr">How many synonyms would you like to get?</label>
     <input name="nr" id="nr">
-    <button>Submit</button>
+    <input type="submit" value="Search">
 </form>
+<div id="result"></div>
+<div id="pyResult"></div>
 </body>
 </html>
