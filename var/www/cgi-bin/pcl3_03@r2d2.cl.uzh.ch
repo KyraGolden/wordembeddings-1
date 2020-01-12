@@ -7,6 +7,7 @@ import gzip
 from gensim.models.fasttext import FastText
 from sklearn import metrics
 import numpy as np
+import mpld3
 cgitb.enable(display=0, logdir="/logs")
 
 
@@ -71,10 +72,6 @@ def find_synonyms(fname, word):
     #for label, x, y in zip(listofkeys.format(y), x_coords, y_coords):
     for i, txt in enumerate(listofkeys):
         plt.annotate(txt, (x_coords[i], y_coords[i]))
-        #plt.annotate(label,
-        #             xy=(x, y),
-        #            xytext=(0, 0),
-        #           textcoords='offset points')
     plt.xlim(x_coords.min() + 0.00005, x_coords.max() + 0.00005)
     plt.ylim(y_coords.min() + 0.00005, y_coords.max() + 0.00005)
     #plt.savefig('vectors.png')
