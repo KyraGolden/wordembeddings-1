@@ -35,12 +35,50 @@ def find_synonyms(fname, word):
         tokens = str(line).split(' ')
         data[tokens[0]] = tokens[1:]
         counter += 1
-    distances = {}
+        distances = {}
+    X = np.empty((0, 300))
     for item in data:
-        if item == word:
+        # print(item)
+        if item.lower() == word.lower():
             pass
         else:
-            distances[item] = metrics.pairwise.cosine_distances([data[item]], [data[word]])
+            # Bsp. Königx
+         try:
+            distance = metrics.pairwise.cosine_distances([data[item]], [data[word]])
+            if 0.3 < distance < 0.5:
+                distances[item] = distance
+                # save the n vectors
+                vec = np.array(data[item], dtype=float)
+                X = np.append(X, [vec], axis=0)
+         except ValueError:
+             pass
+
+
+    #add original vector to array
+    help2 = np.array(data[word], dtype=float)
+    X = np.append(X,[help2],axis = 0)
+
+    tsne = TSNE(n_components=2, random_state=0)
+    np.set_printoptions(suppress=True)
+    Y = tsne.fit_transform(X)
+    x_coords = Y[:, 0]
+    y_coords = Y[:, 1]
+    # display scatter plot
+    plt.scatter(x_coords, y_coords)
+    X = np.append(X, [help2], axis=0)
+    listofkeys = list(distances.keys())
+    listofkeys.append(word)
+    #for label, x, y in zip(listofkeys.format(y), x_coords, y_coords):
+    for i, txt in enumerate(listofkeys):
+        plt.annotate(txt, (x_coords[i], y_coords[i]))
+        #plt.annotate(label,
+        #             xy=(x, y),
+        #            xytext=(0, 0),
+        #           textcoords='offset points')
+    plt.xlim(x_coords.min() + 0.00005, x_coords.max() + 0.00005)
+    plt.ylim(y_coords.min() + 0.00005, y_coords.max() + 0.00005)
+    #plt.savefig('vectors.png')
+    mpld3.display(plt)
     key_min = min(distances.keys(), key=(lambda k: distances[k]))
     print('Min. Distanz')
     print(key_min)
