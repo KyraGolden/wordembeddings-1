@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+	Synonyme für Deutsch by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> -->
+		<script
+		src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+		crossorigin="anonymous"></script>
+		<script src="js/script.js"></script>
+		<title>Sprachübergreifende Wordembeddings</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="css/skel.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/style-xlarge.css" />
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<h1><a href="index.html">Sprachübergreifende Wordembeddings</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<!--<li><a href="wordembeddings_finder.html">Generic</a></li>-->
+						<li><a href="faq.html">FAQ</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+
+					<header class="major">
+						<h2>Wordembeddings-Tool</h2>
+						<p>Gib ein Wort ein und die Anzahl Wordembeddings, die du dafür erhalten möchtest.</p>
+					</header>
+					<form action=" " id="getSynonyms">
+						<label for="w">Für welches Wort möchtest du Wordembeddings erhalten?</label>
+							<input type="text" id="w" name="w" placeholder="Gib ein Wort ein">
+							<br>
+						<label for="sprache_wort">In welcher Sprache ist dein Eingabewort?</label>
+						<select id="sprache_wort" name="sprache_wort">
+							<option value="d">Deutsch</option>
+							<option value="e">Englisch</option>
+						</select>
+						<br>
+						<label for="nr">Wie viele Synonyme wünschst du?</label>
+						<select id="nr" name="nr">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+						</select>
+						<br>
+						<label for="sprache_wordemb">In welcher Sprache wünschst du die Wordembeddings?</label>
+						<select id="sprache_wordemb" name="sprache_wordemb">
+							<option value="d">Deutsch</option>
+							<option value="e">Englisch</option>
+						</select>
+						<!--<input name="nr" id="nr"> -->
+						<br>
+						<label for="searchType">Suchtyp</label>
+							<input type="radio" name="searchType" value="quickSearch" checked> Mach mir bitte eine schnelle Suche (Standard).</input> <br>
+							<input type="radio" name="searchType" value="bigSearch"> Ich bevorzuge die grosse Suche. Das kann etwas dauern. </input><br>
+						<br>
+						<input type="submit" value="Suche">
+					</form>
+			<div id="result">
+				<div id="animation">
+				</div>
+				<h2 id="response_head"></h2>
+				<h3 id="response_body"></h3>
+			</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<section class="links">
+						<div class="row">
+					<div class="8u 12u$(medium)">
+						<ul class="copyright">
+							<li>&copy; 2020, Synonym Finder Team. All rights reserved.</li>
+							<li>Design: <a href="http://templated.co">TEMPLATED</a>, adapted by Synonym Finder Team</li>
+							<li>Images: <a href="http://unsplash.com">Unsplash</a>, <a href="https://pisys.co">Pisys</a>, <a href="https://www.wortwolken.com/">Wortwolken.com</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</body>
+</html>

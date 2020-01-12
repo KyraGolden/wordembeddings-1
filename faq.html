@@ -18,6 +18,7 @@
 	</head>
 	<body class="landing">
 
+
 		<!-- Header -->
 			<header id="header">
 				<h1><a href="index.html">Sprachübergreifende Wordembeddings</a></h1>
@@ -33,45 +34,28 @@
 
 		<!-- Banner -->
 			<section id="banner">
-				<h2>Hallo, ich bin dein Wordembeddings-Finder</h2>
-				<p>Ein Tool, das dir für ein deutsches oder englisches Wort eine gewünschte Anzahl verwandter Begriffe zurückgibt.</p>
-				<ul class="actions">
-					<li>
-						<a href="wordembeddings_finder.html" class="button big">Hier geht's zum Wordembeddings-Tool</a>
-					</li>
-				</ul>
+				<h2>Häufig gestellte Fragen</h2>
+				<p></p>
 			</section>
 
 			<section id="two" class="wrapper style2 special">
 				<div class="container">
 					<header class="major">
-						<h2>Mitarbeiter</h2>
-						<p>Das Team, das hinter dem Tool steckt:</p>
+						<h3>1. Wie werden die Ähnlichkeiten zwischen den Wörtern berechnet? </h3>
+						<p>Die Berechung basiert auf 300-dimensionalen Wortvektoren, die durch <a href="https://fasttext.cc/docs/en/crawl-vectors.html">Fasttext</a>
+							zur Verfügung gestellt werden. Die Anzahl gewünschter Wörter wird mittels der kleinsten Cosinus-Distanz zum eingegebenen Wort aus den Vektorfiles extrahiert.
+						</p>
+						<h3>2. Gibt es Unterschiede zwischen der Suche innerhalb einer Sprache und der sprachübergreifenden Suche? </h3>
+						<p>Ja. Für die Wordembeddings-Suche innerhalb einer Sprache (1) werden andere Vektorfiles verwendet als für die sprachübergreifende Suche (2). Erstere sind nicht aufeinander abgestimmt,
+							sondern wurden individuell trainiert. Zweitere beinhalten dafür alle deutschen Wörter in Kleinbuchstaben.
+						</p>
+						<h3>3. Wie viele Wörter beinhaltet die Suche?</h3>
+						<p>Die grosse Suche beinhaltet sowohl auf deutsch als auch auf englisch 50'000 Wörter. Die Files für die kleine Suche beinhalten jeweils 10'000 Wortvektoren.
+						</p>
+						<h3>4. Warum sind deutsche Nomen bei der sprachübergreifenden Suche kleingeschrieben?</h3>
+						<p>Das Wikipedia Corpus, das für die sprachübergreifenden Wordembeddings verwendet wurde, enthält alle Wörter in Kleinbuchstaben.
+						</p>
 					</header>
-					<section class="profiles">
-						<div class="row">
-							<section class="4u 6u(medium) 12u$(xsmall) profile">
-								<img src="images/sw.jpg" alt="" />
-								<h4>Salome Wildermuth</h4>
-								<p></p>
-							</section>
-							<section class="4u 6u$(medium) 12u$(xsmall) profile">
-								<img src="images/profile_placeholder.gif" alt="" />
-								<h4>Livia Studer</h4>
-								<p></p>
-							</section>
-							<section class="4u 6u(medium) 12u$(xsmall) profile">
-								<img src="images/profile_placeholder.gif" alt="" />
-								<h4>Kyra Goud</h4>
-								<p></p>
-							</section>
-							<!--<section class="3u$ 6u$(medium) 12u$(xsmall) profile">
-								<img src="images/profile_placeholder.gif" alt="" />
-								<h4>Du?</h4>
-								<p>Wir freuen uns über deine Bewerbung.</p>
-							</section>-->
-						</div>
-					</section>
 				</div>
 			</section>
 
