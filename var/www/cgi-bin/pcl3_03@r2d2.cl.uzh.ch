@@ -6,6 +6,8 @@ import io
 import gzip
 from gensim.models.fasttext import FastText
 from sklearn import metrics
+from sklearn.manifold import TSNE
+from matplotlib import pyplot as plt
 import numpy as np
 import mpld3
 cgitb.enable(display=0, logdir="/logs")
