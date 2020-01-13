@@ -9,7 +9,7 @@ from sklearn import metrics
 from sklearn.manifold import TSNE
 from matplotlib import pyplot as plt
 import numpy as np
-import mpld3
+import pylab
 cgitb.enable(display=0, logdir="/logs")
 
 
@@ -77,7 +77,7 @@ def find_synonyms(fname, word):
     plt.xlim(x_coords.min() + 0.00005, x_coords.max() + 0.00005)
     plt.ylim(y_coords.min() + 0.00005, y_coords.max() + 0.00005)
     #plt.savefig('vectors.png')
-    mpld3.display(plt)
+    pylab.savefig( "tempfile.png", format='png' )
     key_min = min(distances.keys(), key=(lambda k: distances[k]))
     print('Min. Distanz')
     print(key_min)
