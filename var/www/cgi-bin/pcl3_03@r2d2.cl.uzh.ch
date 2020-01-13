@@ -38,7 +38,7 @@ def find_synonyms(fname, word):
         tokens = str(line).split(' ')
         data[tokens[0]] = tokens[1:]
         counter += 1
-        distances = {}
+    distances = {}
     X = np.empty((0, 300))
     for item in data:
         # print(item)
